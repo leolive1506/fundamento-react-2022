@@ -30,3 +30,38 @@
             - Já faz compiler automático, não sendo necessário o babel para executar, tem seu próprio compilador interno
 
 - Hoje já há suporte de ES modules
+
+# Estrutura inicial
+- DOM (Document Object Model)
+    - Representação do html através do js
+    - Utilizado reactDOM para react funcionar ambiente web
+
+- main.jsx
+    - Importa dom e seleciona elemento raiz onde deverá renderizar nosso app
+
+# Componente
+- Parte qeu pode ser repetida, reutilizavel e mais fácil a manutenção
+- No react, component é uma função que retorna HTML
+
+# Propriedades
+- Informações passada para componente
+
+# CSS Module
+- Vite tem suporte por padrão
+- Diferente de import padrão como e ja estaria funcionando
+```js
+import './styles.css'
+```
+- Importar
+```js
+import styles from './styles.css'
+```
+
+# Dicas geral
+- Font mais detalhadas
+```css
+-webkit-font-smoothing: antialiased;
+```
+# Default exports vs named exports
+- Default exports pode redefinir o nome do componente na hora de importar
+
