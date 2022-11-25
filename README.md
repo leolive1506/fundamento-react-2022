@@ -102,11 +102,23 @@ const posts = [1, 4, 3, 2];
 - Não altera o valor de uma variavel na memória
     - Cria um novo valor, um novo espaço na memória
     - Para react criar novo valor é mais rápido do que alterar o que mudou no ja existente
+
 # Dicas geral
+## onCLick
+- Espera uma função e não execução de uma
+    - Ao tenta passar execução entre em loop, Pois
+        - Assim que montar o componente é executado a função 
+        - que mudar um estado
+        - Por padrão, ao mudar um estado, react remonta todo componente
+        - Gerando um ciclo infinito
+```js
+// passando função
+<button onClick={handleLikeComment}></button>
+<button onClick={setLinkeComment(likeComment + 1)}></button>
+```
 - Font mais detalhadas
 ```css
 -webkit-font-smoothing: antialiased;
 ```
 # Default exports vs named exports
 - Default exports pode redefinir o nome do componente na hora de importar
-
