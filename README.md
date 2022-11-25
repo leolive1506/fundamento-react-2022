@@ -103,6 +103,35 @@ const posts = [1, 4, 3, 2];
     - Cria um novo valor, um novo espaço na memória
     - Para react criar novo valor é mais rápido do que alterar o que mudou no ja existente
 
+# Closures no React
+- Mesmo chamando setLike duas vezes, o resultado final é 1
+```js
+function Comment() {
+    const [like, setLike] = useState(0);
+    function addLike() {
+        setLike(like + 1)
+        console.log(like)
+        setLike(like + 1)
+    }
+}
+```
+- React cria um novo contexto com uma nova versão do componente onde **like** vale 1
+    - Porém no contexto anterior, like continua sendo zero
+        - Pois setLike esta executando no mesmo contexto da chamada anterior
+- Forma de resolver esse problema
+    - Armazenar em uma veriavel o valor
+    - Ou Pegar o valor mais recente disponivel no setLike
+        - Sempre atualizar uma informação que depende do valor anterior, sempre bom utilizar esse padrão de função
+```js
+function Comment() {
+    const [like, setLike] = useState(0);
+    function addLike() {
+        setLike(state => state + 1)
+        setLike(state => state + 1)
+    }
+}
+```
+
 # Dicas geral
 ## onCLick
 - Espera uma função e não execução de uma
