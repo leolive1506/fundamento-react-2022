@@ -57,6 +57,51 @@ import './styles.css'
 import styles from './styles.css'
 ```
 
+# Iteração react
+- Utilizado map para percorrer e mostrar items na tela
+- forEach
+    - Percorre um array porém não tem nenhum retorno
+
+
+# Programação imperativa vs Programação declarativa
+## Programação imperativa
+- O que deve ser feito passo-a-passo
+### Ex receita de bolo
+- Ligar forno
+- Abrir porta forno
+## Programação declarativa
+- Quais as condições para eu ter o resultado final
+
+### Ex receita de bolo
+- Forno precisa estar ligado
+- Forno precisa estar aberto
+
+# Key no react
+## 3 momentos em que um componente é renderizado no react
+1. Quando o estado altera
+2. Quando a propriedade do componente altera
+3. Quando um componente pai renderiza novamente
+
+- Ao adicionar a key
+    - Ele identifica os componente que ja tem
+    - Compara o que ja tava na tela e o que não tava
+
+## Porque não pode usar o indice do array
+```js
+// primerio estado com os index (0, 1, 2, 3)
+const posts = [1, 2, 3, 4];
+
+// por algum motivo altera a ordem no array
+const posts = [1, 4, 3, 2];
+// mesmo alterando ordem no array, os index permanecem os mesmo
+```
+- Ao comparar os index sendo o mesmo e o conteudo diferente renderiza tudo novamente pensando ter mudado algo no array
+    - Enquanto se fosse um id, mudava apenas os itens que haviam mudado
+
+# Imutabilidade
+- Não altera o valor de uma variavel na memória
+    - Cria um novo valor, um novo espaço na memória
+    - Para react criar novo valor é mais rápido do que alterar o que mudou no ja existente
 # Dicas geral
 - Font mais detalhadas
 ```css
